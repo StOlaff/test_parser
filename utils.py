@@ -19,12 +19,9 @@ def write_data(last_run, data, keys):
         worksheet.write(0, i, keys[i])
 
     # пишем данные
-    for i in range(len(data)):
-        row = data[i]
-        for j in range(len(keys)):
+    for i in range(1, len(data)+1):
+        row = data[i-1]
+        for j in range(0, len(keys)):
             worksheet.write(i, j, str(row[j]))
 
     workbook.close()
-
-
-
